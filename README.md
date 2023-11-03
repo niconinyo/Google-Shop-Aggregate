@@ -4,7 +4,8 @@ Using an API to search through all of google shops aggregate data by specific it
 # ERD
 ![ERD]([https://imgur.com/a/6buUl2z](https://imgur.com/a/JM1gnGV))
 
-# Route Table
+# 
+  Route Table
 | URL                      	| HTTP Verb 	| Purpose                                                                       	| CRUD Action 	| Created Yet 	|
 |--------------------------	|-----------	|-------------------------------------------------------------------------------	|-------------	|-------------	|
 | /user/signup             	| POST      	| Creat acc                                                                     	| Create      	| No          	|
