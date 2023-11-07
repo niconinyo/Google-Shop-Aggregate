@@ -10,13 +10,13 @@ const db = require('../models')
 // Routes
 // ----------------------------------------------------------------
 // index route
-router.get('/:productId', function (req, res) {
+router.get('/:offerId', function (req, res) {
     db.Review.find({productId: req.params.productId})
         .then(reviews => res.json(reviews))
 })
 
 // Route to create Review
-router.post('/offers/:offerId', (req, res) => {
+router.post('/new/:offerId', (req, res) => {
     db.Review.create(req.body)
         .then(review => res.json(review))
 })
@@ -33,7 +33,7 @@ router.put('/:id', (req, res) => {
 // Destroy route
 
 router.delete('/:id', (req, res) => {
-    db.Review.findByIdAndRemove(req.params.id)
+    db.Review.findByIdAndDelete(req.params.id)
         .then(() => res.json({ deletedReviewId: req.params.id }))
 })
 

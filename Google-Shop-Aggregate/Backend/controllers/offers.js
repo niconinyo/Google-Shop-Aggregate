@@ -33,7 +33,7 @@ router.put('/:id', (req, res) => {
 // Destroy route
 
 router.delete('/:id', (req, res) => {
-    db.Offer.findByIdAndRemove(req.params.id)
+    db.Offer.findByIdAndDelete(req.params.id)
         .then(() => res.json({ deletedOfferId: req.params.id }))
 })
 
