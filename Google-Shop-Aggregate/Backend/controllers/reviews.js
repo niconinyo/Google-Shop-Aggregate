@@ -16,7 +16,7 @@ router.get('/:productId', function (req, res) {
 })
 
 // Route to create Review
-router.post('/', (req, res) => {
+router.post('/offers/:offerId', (req, res) => {
     db.Review.create(req.body)
         .then(review => res.json(review))
 })
