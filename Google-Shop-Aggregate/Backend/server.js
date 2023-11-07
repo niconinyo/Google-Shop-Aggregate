@@ -12,6 +12,8 @@ const db = require('./models');
 // Reuire controller routes
 // ----------------------------------------------------------------
 const reviewsCtrl = require('./controllers/reviews')
+const offersCtrl = require('./controllers/offers')
+
 
 // Express app
 // ----------------------------------------------------------------
@@ -25,7 +27,9 @@ app.use(express.json())
 
 // Mount routes
 // ----------------------------------------------------------------
-app.use('/api/reviews', reviewsCtrl)
+app.use('/reviews', reviewsCtrl)
+app.use('/offers', offersCtrl)
+
 
 // Tell the app to listen on specified port
 // ----------------------------------------------------------------

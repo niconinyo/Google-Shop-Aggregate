@@ -32,7 +32,7 @@ function App() {
     <>
       
       <h1>Aggie</h1>
-      <p>Find the best price for you!</p>
+      <p>Find the best offer for you!</p>
       
     </>
   )

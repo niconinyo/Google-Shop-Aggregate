@@ -16,5 +16,6 @@ db.on('connected', function () {
 // ----------------------------------------------------------------
 
 module.exports = {
-    Review: require('./review')
+    Review: require('./review'),
+    Offer: require('./offer')
 }
