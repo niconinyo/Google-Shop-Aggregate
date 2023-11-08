@@ -1,11 +1,14 @@
 import { useState, useEffect } from 'react'
 import './styles.css'
 import Gallery from '../Gallery'
+import DetailsPage from '../DetailsPage'
 
 function App() {
 
   const [listings, setListings] = useState([])
-  const [isLoading, setIsLoading] = useState(true)
+  // const [isLoading, setIsLoading] = useState(true)
+  const [detailsData, setDetailsData] = useState({})
+  console.log(detailsData)
 
   useEffect(() => {
     async function getData() {
@@ -26,26 +29,26 @@ function App() {
       });
       const { data } = await res.json();
       setListings(data);
-      setIsLoading(false);
+      // setIsLoading(false);
   
     }
     getData();
    
   }, []);
-console.log(listings)
+ 
   return (
     <>
       
       <h1>Aggie</h1>
 
-      <Gallery listings = {listings} />
+      <Gallery listings = {listings} updateDetails={setDetailsData} />
       {/* {isLoading ? (
         <p> Loading...</p>
       ) : (
         <img src={listings[0].product_photos[0]} />
       )} */}
       {/* {listings[0].product_photos[0] } */}
-      
+      {detailsData.product_id && <DetailsPage {...detailsData} />}
     </>
   )
 }

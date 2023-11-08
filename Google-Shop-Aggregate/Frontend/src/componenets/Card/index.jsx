@@ -1,6 +1,7 @@
-export default function Card({ listingsData}) {
+export default function Card({ listingsData, updateDetails}) {
+    
     return(
-        <figure>
+        <figure onClick={() => updateDetails(listingsData)}>
             <img src={listingsData.product_photos[0]}  />
             <figcaption>
                 <h2>{listingsData.product_title}</h2>
