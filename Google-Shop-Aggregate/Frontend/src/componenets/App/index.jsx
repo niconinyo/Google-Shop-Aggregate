@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react'
+import { Routes, Route, Link } from 'react-router-dom';
 import './styles.css'
 import Gallery from '../Gallery'
 import DetailsPage from '../DetailsPage'
+import HomePage from '../HomePage'
+import SearchPage from '../SearchPage';
 
 function App() {
 
@@ -39,16 +42,37 @@ function App() {
   return (
     <>
       
-      <h1>Aggie</h1>
+  <nav className="bg-gray-800 shadow-lg">
+    <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+      <div className="relative flex items-center justify-between h-16">
+        <div className="flex-shrink-0">
+          <Link to="/">
+            <h2 className="text-white font-bold text-2xl">Aggy</h2>
+          </Link>
+        </div>
+        <div className="flex-grow">
+          <ul className="flex justify-end text-gray-300 text-lg font-medium">
+            <li>
+              <Link to="/search">
+                <h4 className="px-3 py-2 hover:text-white">Search for listings!</h4>
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
 
-      <Gallery listings = {listings} updateDetails={setDetailsData} />
-      {/* {isLoading ? (
-        <p> Loading...</p>
-      ) : (
-        <img src={listings[0].product_photos[0]} />
-      )} */}
-      {/* {listings[0].product_photos[0] } */}
-      {detailsData.product_id && <DetailsPage {...detailsData} />}
+      <Routes>
+        <Route path="/" element={
+          <HomePage
+            listings={listings}
+            setDetailsData={setDetailsData}
+        />}
+      />
+      <Route path="/search" element={<SearchPage />} />
+      <Route path ="/details" element={<DetailsPage {...detailsData} />} />
+      </Routes>
     </>
   )
 }

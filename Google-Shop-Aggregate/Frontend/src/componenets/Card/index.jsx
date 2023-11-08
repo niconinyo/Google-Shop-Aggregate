@@ -1,7 +1,12 @@
+import { Link } from 'react-router-dom'
+
 export default function Card({ listingsData, updateDetails}) {
     
     return(
-        <figure onClick={() => updateDetails(listingsData)}>
+        <Link
+            to={"/details"}
+         onClick={() => updateDetails(listingsData)}>
+         <figure>
             <img src={listingsData.product_photos[0]}  />
             <figcaption>
                 <h2>{listingsData.product_title}</h2>
@@ -9,6 +14,6 @@ export default function Card({ listingsData, updateDetails}) {
                 <h4>{listingsData.offer.price}</h4>
             </figcaption>
         </figure>
-        
+        </Link>
     )
 }
