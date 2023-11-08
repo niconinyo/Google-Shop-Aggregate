@@ -10,8 +10,8 @@ const db = require('../models')
 // Routes
 // ----------------------------------------------------------------
 // index route
-router.get('/:offerId', function (req, res) {
-    db.Offer.find({offerId: req.params.offerId})
+router.get('/', function (req, res) {
+    db.Offer.find({})
         .then(offers => res.json(offers))
 })
 

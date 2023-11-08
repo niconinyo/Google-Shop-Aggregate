@@ -1,0 +1,33 @@
+import axios from 'axios'
+
+export async function getReviews(offerId) {
+    const { data } = await axios.get(`/api/reviews/${offerId}`)
+    return data 
+}
+
+export async function postReview(review) {
+    const { data } = await axios.post('/api/reviews', review)
+    return data
+}
+
+export async function updateReview(review, id) {
+    const { data } = await axios.put(`/api/reviews/${id}`, review)
+}
+
+export async function deleteReview(id) {
+    const { data } = await axios.delete(`/api/reviews/${id}`)   
+    return data
+}
+
+export async function getOffers() {
+    const { data } = await axios.get('/api/offers/')
+    return data
+}
+
+export async function postOffers(offer) {
+    const { data } = await axios.get('/api/offers/new', offer)
+    return data
+}
+
+
+

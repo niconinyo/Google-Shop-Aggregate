@@ -16,7 +16,7 @@ router.get('/:offerId', function (req, res) {
 })
 
 // Route to create Review
-router.post('/new/:offerId', (req, res) => {
+router.post('/', (req, res) => {
     db.Review.create(req.body)
         .then(review => res.json(review))
 })

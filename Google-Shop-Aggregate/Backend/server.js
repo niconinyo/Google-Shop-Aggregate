@@ -27,7 +27,7 @@ app.use(express.json())
 
 // Mount routes
 // ----------------------------------------------------------------
-app.use('/reviews', reviewsCtrl)
+app.use('/api/reviews', reviewsCtrl)
 app.use('/offers', offersCtrl)
 
 
