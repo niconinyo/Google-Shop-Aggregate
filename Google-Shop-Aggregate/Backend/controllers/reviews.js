@@ -1,6 +1,7 @@
 // Require modules
 // ----------------------------------------------------------------
 const express = require('express')
+const mongoose = require('mongoose')
 const router = express.Router()
 
 // require db connection/models
@@ -10,13 +11,14 @@ const db = require('../models')
 // Routes
 // ----------------------------------------------------------------
 // index route
-router.get('/:offerId', function (req, res) {
-    db.Review.find({productId: req.params.productId})
+router.get('/:listingsId', function (req, res) {
+    db.Review.find({listingsId: req.params.listingsId})
         .then(reviews => res.json(reviews))
 })
 
 // Route to create Review
 router.post('/', (req, res) => {
+    console.log(req.body)
     db.Review.create(req.body)
         .then(review => res.json(review))
 })

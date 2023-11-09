@@ -70,7 +70,7 @@ function App() {
             setDetailsData={setDetailsData}
         />}
       />
-      <Route path="/search" element={<SearchPage />} />
+      <Route path="/search" element={<SearchPage setDetailsData={setDetailsData}/>} />
       <Route path ="/details" element={<DetailsPage {...detailsData} />} />
       </Routes>
     </>

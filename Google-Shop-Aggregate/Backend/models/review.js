@@ -4,8 +4,7 @@ const reviewSchema = new mongoose.Schema({
     name: { type: String, required: true },
     title: { type: String, maxLength: 50 },
     body: { type: String, required: true },
-    offerID: { type: mongoose.ObjectId
-        , reference: 'offer' }
+    listingsId: { type: String }
     },
 );
 

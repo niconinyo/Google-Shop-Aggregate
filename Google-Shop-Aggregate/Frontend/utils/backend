@@ -1,11 +1,12 @@
 import axios from 'axios'
 
-export async function getReviews(offerId) {
-    const { data } = await axios.get(`/api/reviews/${offerId}`)
+export async function getReviews(product_id) {
+    const { data } = await axios.get(`/api/reviews/${product_id}`)
     return data 
 }
 
 export async function postReview(review) {
+    console.log(review)
     const { data } = await axios.post('/api/reviews', review)
     return data
 }

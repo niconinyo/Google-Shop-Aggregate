@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 
 export default function Card({ listingsData, updateDetails}) {
-    
+    console.log( updateDetails);
     return(
         <Link
             to={"/details"}

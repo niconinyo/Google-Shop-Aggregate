@@ -1,27 +1,30 @@
 import { useState } from "react"
+import Gallery from "../Gallery"
 
-export default function SearchPage() {
+export default function SearchPage(props) {
     const [query, setQuery] = useState('')
     const [queryResults, setQueryResults] = useState([])
 
 
-//     async function getData(url) {
-//         const url=`https://real-time-product-search.p.rapidapi.com/search?q=${query}`
+    async function getData() {
+        const url=`https://real-time-product-search.p.rapidapi.com/search?q=${query}`
     
-//          const res = await fetch(url)
-//             headers: {
-//                 'X-RapidAPI-Key': '3b348ff6d3msh85a5ebcde5c743ap15ac87jsn1fea8af32b68',
-//                 'X-RapidAPI-Host': 'real-time-product-search.p.rapidapi.com'    
-//     }
-//     const { data } = await res.json()
-//     setQueryResults([...queryResults, ...data]);
-//     }
-// }
+         const res = await fetch(url,{
+            headers: {
+                'X-RapidAPI-Key': '3b348ff6d3msh85a5ebcde5c743ap15ac87jsn1fea8af32b68',
+                'X-RapidAPI-Host': 'real-time-product-search.p.rapidapi.com'  } } )
+    
+    const { data } = await res.json()
+    setQueryResults([...queryResults, ...data]);
+    // console.log(data);
+    }
 
-//     function handleQuerySubmit(event) {
-//         event.precentDefault()
-//         console.log(query)
-    // }
+
+    function handleQuerySubmit(event) {
+        event.preventDefault()
+        getData()
+        // console.log(query)
+    }
     return (
             <div className="search-page p-10">
                 <form onSubmit={handleQuerySubmit} className="mt-4 text-center">
@@ -43,6 +46,13 @@ export default function SearchPage() {
                         Search
                     </button>
                 </form>
+                {queryResults.length > 0 && (
+                    <Gallery
+                    listings={queryResults}
+                    url={`https://real-time-product-search.p.rapidapi.com/search?q=${query}`}
+                    updateDetails={props.setDetailsData}
+                    />
+                )}
             </div>
         )
         

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
+import ReviewSection from "../ReviewSection";
 
-function DetailsPage({product_id, offer, product_title, product_description, product_attributes, typical_price_range, price, store_name, shipping, product_condition, product_photos }) {
+function DetailsPage({product_id, offer, product_title, product_description, product_attributes, typical_price_range, price, store_name, shipping, product_condition, product_photos, props, id }) {
    
 
    const [offerings, setOfferings] = useState();
@@ -17,7 +18,7 @@ function DetailsPage({product_id, offer, product_title, product_description, pro
     try {
         const response = await fetch(url, options);
         const data = await response.json();
-        console.log(data.data); 
+        // console.log(data.data); 
         setOfferings(data.data)
     } catch (error) {
         console.error(error);
@@ -25,9 +26,10 @@ function DetailsPage({product_id, offer, product_title, product_description, pro
    }
 getOfferings() 
 },[product_id]);
-console.log(offerings?.data)
+
     return (
         <>
+        <div>
             <img src= {product_photos[0]}/>
             <h1>{offer?.price}</h1>
             <h1>{product_title}</h1>
@@ -43,10 +45,14 @@ console.log(offerings?.data)
                 {offering.store_name} - {offering.price} - 
                 <a href={offering.offer_page_url} target="_blank" rel="noopener noreferrer">BUY NOW</a>
             </p>)}
-
+            
+            <ReviewSection listingsId={product_id} />
+           
+        </div>
         
         </>
     )
+    
 }
 
 export default DetailsPage
