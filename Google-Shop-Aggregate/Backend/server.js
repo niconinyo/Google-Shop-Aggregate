@@ -28,7 +28,7 @@ app.use(express.json())
 // Mount routes
 // ----------------------------------------------------------------
 app.use('/api/reviews', reviewsCtrl)
-app.use('/offers', offersCtrl)
+app.use('/api/offers', offersCtrl)
 
 
 // Tell the app to listen on specified port

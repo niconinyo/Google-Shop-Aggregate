@@ -5,6 +5,7 @@ import Gallery from '../Gallery'
 import DetailsPage from '../DetailsPage'
 import HomePage from '../HomePage'
 import SearchPage from '../SearchPage';
+import OfferSection from '../../OfferSection';
 
 function App() {
 
@@ -50,6 +51,11 @@ function App() {
             <h2 className="text-white font-bold text-2xl">Aggy</h2>
           </Link>
         </div>
+        <div>
+        <Link to="/offers">
+            <h2 className="text-white font-bold text-2xl">Offers</h2>
+          </Link>
+        </div>
         <div className="flex-grow">
           <ul className="flex justify-end text-gray-300 text-lg font-medium">
             <li>
@@ -72,6 +78,7 @@ function App() {
       />
       <Route path="/search" element={<SearchPage setDetailsData={setDetailsData}/>} />
       <Route path ="/details" element={<DetailsPage {...detailsData} />} />
+      <Route path="/offers" element={<OfferSection setDetailsData={setDetailsData}/>} />
       </Routes>
     </>
   )
