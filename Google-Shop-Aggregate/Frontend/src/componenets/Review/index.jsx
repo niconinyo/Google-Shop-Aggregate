@@ -29,6 +29,7 @@ export default function Review({ data, refreshReviews }) {
 
     // Delete a comment
     function handleDelete() {
+        console.log(data._id, 'delete')
         deleteReview(data._id)
             .then(() => refreshReviews())
     }

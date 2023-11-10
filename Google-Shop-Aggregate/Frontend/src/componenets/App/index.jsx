@@ -6,6 +6,8 @@ import DetailsPage from '../DetailsPage'
 import HomePage from '../HomePage'
 import SearchPage from '../SearchPage';
 import OfferSection from '../../OfferSection';
+import AuthFormPage from '../AuthFormPage';
+
 
 function App() {
 
@@ -63,6 +65,16 @@ function App() {
                 <h4 className="px-3 py-2 hover:text-white">Search for listings!</h4>
               </Link>
             </li>
+            <li>
+              <Link to="/auth/signup">
+                <h4 className="px-3 py-2 hover:text-white">Sign Up</h4>
+              </Link>
+            </li>
+            <li>
+              <Link to="/auth/login">
+                <h4 className="px-3 py-2 hover:text-white">Log In</h4>
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
@@ -79,7 +91,9 @@ function App() {
       <Route path="/search" element={<SearchPage setDetailsData={setDetailsData}/>} />
       <Route path ="/details" element={<DetailsPage {...detailsData} />} />
       <Route path="/offers" element={<OfferSection setDetailsData={setDetailsData}/>} />
+      <Route path="/auth/:formType" element={<AuthFormPage />} />
       </Routes>
+
     </>
   )
 }

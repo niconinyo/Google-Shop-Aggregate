@@ -13,6 +13,7 @@ const db = require('./models');
 // ----------------------------------------------------------------
 const reviewsCtrl = require('./controllers/reviews')
 const offersCtrl = require('./controllers/offers')
+const usersCtrl = require('./controllers/users')
 
 
 // Express app
@@ -29,6 +30,7 @@ app.use(express.json())
 // ----------------------------------------------------------------
 app.use('/api/reviews', reviewsCtrl)
 app.use('/api/offers', offersCtrl)
+app.use('/api/users', usersCtrl)
 
 
 // Tell the app to listen on specified port
