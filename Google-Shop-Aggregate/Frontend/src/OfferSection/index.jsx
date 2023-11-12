@@ -145,5 +145,6 @@ export default function OfferSection({}) {
             }
             {offerElements}
         </div>
+        
     )
 }
