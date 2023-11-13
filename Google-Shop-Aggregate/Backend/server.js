@@ -25,12 +25,17 @@ const app = express();
 app.use(cors())
 app.use(express.urlencoded({ entended: true}));
 app.use(express.json())
+app.use(express.static(path.join(path.dirname(__dirname), 'frontend', 'dist')))
 
 // Mount routes
 // ----------------------------------------------------------------
 app.use('/api/reviews', reviewsCtrl)
 app.use('/api/offers', offersCtrl)
 app.use('/api/users', usersCtrl)
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(path.dirname(__dirname), 'frontend', 'dist', 'index.html'));
+});
 
 
 // Tell the app to listen on specified port
