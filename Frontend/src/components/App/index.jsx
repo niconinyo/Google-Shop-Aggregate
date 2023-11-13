@@ -5,7 +5,7 @@ import Gallery from '../Gallery'
 import DetailsPage from '../DetailsPage'
 import HomePage from '../HomePage'
 import SearchPage from '../SearchPage';
-import OfferSection from '../../OfferSection';
+import OfferSection from '../OfferSection';
 import AuthFormPage from '../AuthFormPage';
 
 const RAPIDAPI_KEY = import.meta.env.VITE_APP_RAPIDAPI_KEY

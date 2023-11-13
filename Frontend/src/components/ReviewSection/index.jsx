@@ -1,28 +1,20 @@
 import { useState, useEffect } from "react"
-import { getOffers, postOffers } from "../../utils/backend.js"
-import Offer from "../componenets/Offer"
+import { postReview, getReviews } from "../../../utils/backend.js"
+import Review from "../Review/index.jsx"
 
-export default function OfferSection({}) {
+export default function ReviewSection({ listingsId }) {
     // Save comments queried from the database in state
-    const [offer, setOffer] = useState([])
+    const [reviews, setReviews] = useState([])
     const [showCreateForm, setShowCreateForm] = useState(false)
     const [createFormData, setCreateFormData] = useState({
         name: '',
-        title: '',
-        body: '',
-        link:'',
-        price:'',   
+        body: ''
     })
-    const refreshOffers = () => {
-        getOffers().then(offers => {
-            setOffer(offers);
-        })
-    }
 
     // Query the database for all comments that pertain to this artwork
     useEffect(() => {
-        getOffers()
-            .then(offers => setOffer(offers))
+        getReviews(listingsId)
+            .then(reviews => setReviews(reviews))
     }, [])
 
 
@@ -40,10 +32,10 @@ export default function OfferSection({}) {
     }
 
     // Update the comments in the comment section after a database transaction
-    // function refreshReviews() {
-    //     getReviews(listingsId)
-    //         .then(newReviewData => setReviews(newReviewData))
-    // }
+    function refreshReviews() {
+        getReviews(listingsId)
+            .then(newReviewData => setReviews(newReviewData))
+    }
 
     // Execute form submission logic
     function handleSubmit(event) {
@@ -52,28 +44,25 @@ export default function OfferSection({}) {
         // clear the form
         setCreateFormData({
             name: '',
-            title: '',
-            body: '',
-            link:'',
-            price:'', 
+            body: ''
         })
         // close the form
         setShowCreateForm(false)
         // create the comment in the backend
-        console.log(createFormData, offer)
-        postOffers({ ...createFormData })
-            .then(() => refreshOffers())
+        console.log(createFormData, listingsId)
+        postReview({ ...createFormData, listingsId: listingsId })
+            .then(() => refreshReviews())
     }
 
 
     // conditionally render comments
-    let offerElements = [<p key='0' className='text-center'>Post your listing!</p>]
-    if (offer.length > 0) {
-        offerElements = offer.map(offer => {
-            return <Offer
-                key={offer._id}
-                data={offer}
-                
+    let reviewElements = [<p key='0' className='text-center'>Be the first to leave a Review!</p>]
+    if (reviews.length > 0) {
+        reviewElements = reviews.map(review => {
+            return <Review
+                key={review._id}
+                data={review}
+                refreshReviews={refreshReviews}
             />
         })
     }
@@ -86,7 +75,7 @@ export default function OfferSection({}) {
 
     return (
         <div className='comment-section bg-gray-300 rounded-lg p-4 pb-10 mt-4 space-y-4 relative'>
-            <h1 className='text-xl font-bold'>Create Your Listing!</h1>
+            <h1 className='text-xl font-bold'>Consumer Thoughts</h1>
             <button
                 onClick={toggleCreateForm}
                 className="top-0 right-5 absolute text-white hover:bg-green-800 font-bold py-2 px-4 bg-green-900 rounded cursor-pointer mr-2"
@@ -105,30 +94,6 @@ export default function OfferSection({}) {
                         onChange={handleInputChange}
                     />
                     <br />
-                    <input
-                        name="price"
-                        className=" url px-2 py-1 w-full bg-gray-100"
-                        placeholder="Enter price"
-                        value={createFormData.price}
-                        onChange={handleInputChange}
-                    />
-                    <br />
-                    <input
-                        name="title"
-                        className="px-2 py-1 w-full bg-gray-100"
-                        placeholder="Title"
-                        value={createFormData.title}
-                        onChange={handleInputChange}
-                    />
-                    <br />
-                    <input
-                        name="link"
-                        className=" url px-2 py-1 w-full bg-gray-100"
-                        placeholder="Enter Link Here"
-                        value={createFormData.link}
-                        onChange={handleInputChange}
-                    />
-                    <br />
                     <textarea
                         name="body"
                         className="p-2 my-2 h-[100px] w-full bg-gray-100"
@@ -143,8 +108,7 @@ export default function OfferSection({}) {
                     </button>
                 </form>
             }
-            {offerElements}
+            {reviewElements}
         </div>
-        
     )
 }
