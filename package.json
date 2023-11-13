@@ -3,9 +3,9 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "backend": "nodemon Backend/server.js",
+    "backend": "nodemon backend/server.js",
     "frontend": "vite",
-    "start": "vite build && node Backend/server.js"
+    "start": "vite build && node backend/server.js"
   },
   "dependencies": {
     "@types/react": "^18.2.15",
