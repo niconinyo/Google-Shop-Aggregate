@@ -8,6 +8,8 @@ import SearchPage from '../SearchPage';
 import OfferSection from '../../OfferSection';
 import AuthFormPage from '../AuthFormPage';
 
+const RAPIDAPI_KEY = import.meta.env.VITE_APP_RAPIDAPI_KEY
+
 
 function App() {
 
@@ -29,7 +31,7 @@ function App() {
       const res = await fetch(endpoint, {
         // method: 'GET',
         headers: {
-          'X-RapidAPI-Key': '3b348ff6d3msh85a5ebcde5c743ap15ac87jsn1fea8af32b68',
+          'X-RapidAPI-Key': `${RAPIDAPI_KEY}`,
           'X-RapidAPI-Host': 'real-time-product-search.p.rapidapi.com'
         },
       });

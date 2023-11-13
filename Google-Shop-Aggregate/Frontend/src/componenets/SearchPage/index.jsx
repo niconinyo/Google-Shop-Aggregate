@@ -15,7 +15,7 @@ export default function SearchPage(props) {
                 'X-RapidAPI-Host': 'real-time-product-search.p.rapidapi.com'  } } )
     
     const { data } = await res.json()
-    setQueryResults([...queryResults, ...data]);
+    setQueryResults([...data]);
     // console.log(data);
     }
 
