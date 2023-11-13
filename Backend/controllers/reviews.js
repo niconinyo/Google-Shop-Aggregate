@@ -10,7 +10,7 @@ const db = require('../models')
 
 /* Require the JWT config
 --------------------------------------------------------------- */
-const config = require('../../jwt.config.js')
+const config = require('../../jwt.config')
 const { debuglog } = require('util')
 
 
