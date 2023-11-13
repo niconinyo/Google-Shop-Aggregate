@@ -25,7 +25,7 @@ const app = express();
 app.use(cors())
 app.use(express.urlencoded({ entended: true}));
 app.use(express.json())
-app.use(express.static(path.join(path.dirname(__dirname), 'frontend', 'dist')))
+app.use(express.static(path.join(path.dirname(__dirname), 'Frontend', 'dist')))
 
 // Mount routes
 // ----------------------------------------------------------------
@@ -34,7 +34,7 @@ app.use('/api/offers', offersCtrl)
 app.use('/api/users', usersCtrl)
 
 app.get('*', (req, res) => {
-    res.sendFile(path.join(path.dirname(__dirname), 'frontend', 'dist', 'index.html'));
+    res.sendFile(path.join(path.dirname(__dirname), 'Frontend', 'dist', 'index.html'));
 });
 
 
