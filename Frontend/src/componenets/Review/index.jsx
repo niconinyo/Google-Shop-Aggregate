@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { updateReview, deleteReview } from "../../../utils/backend"
+import { updateReview, deleteReview } from "../../../utils/backend.js"
 
 export default function Review({ data, refreshReviews }) {
     const [showEditForm, setShowEditForm] = useState(false)

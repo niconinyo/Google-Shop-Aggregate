@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { getOffers, postOffers } from "../../utils/backend"
+import { getOffers, postOffers } from "../../utils/backend.js"
 import Offer from "../componenets/Offer"
 
 export default function OfferSection({}) {

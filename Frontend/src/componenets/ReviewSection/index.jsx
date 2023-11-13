@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { postReview, getReviews } from "../../../utils/backend"
+import { postReview, getReviews } from "../../../utils/backend.js"
 import Review from "../Review"
 
 export default function ReviewSection({ listingsId }) {
