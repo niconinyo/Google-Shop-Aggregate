@@ -9,6 +9,28 @@ Using an API to search through all of google shops aggregate data by specific it
 
 # Tech used:
 React, Vite, Node, Express, MongoDb
+
+#Instructions:
+If you intend to leave a review or post an offer you must log into the site! If not, all you need to do is go to the link and the site will work perfectly!
+
+#User Stories:
+As a buy I really want to be able to see the best options available for specific items. I want to refine by cheapest and or highest rated. I want to pick based off lack of adds and external influence
+
+As a seller I want to be able to make sure my website/offer has a competitive advantage to be seen. I will use this site as a way to make sure SEO isnt taking priority.
+
+As a business owner, I want to see the competive offers in the one central place with clean ui. I Want multiple way to refine my search and limit other distractions/ads
+
+#WireFrames
+
+#Unsolved Problems/Stretch Goals
+I plan on eventually allowing the user to click on offers the same as they would the api content. I want to add filter features to view was most popular! I also would like to populate the home page with the most popular/most recent searched. Some of the biggest hurdles I had came to just navigating through the layers of the api, making sure I was accessing the data correctly.
+
+#Help I had
+Mike from after hours, Chat Gpt, stackoverflow, and https://flowbite.com/ for specific tailwind outlines. 
+
+#Wireframes
+![wireframes](https://www.figma.com/file/LOMx3JEq0uxBOnSl77L7Vj/Untitled?type=design&node-id=0%3A1&mode=design&t=zKlKZvSoCoSV5FkU-1)
+
 # 
 | URL                      	| HTTP Verb 	| Purpose                                                                       	| CRUD Action 	| Created Yet 	|
 |--------------------------	|-----------	|-------------------------------------------------------------------------------	|-------------	|-------------	|
