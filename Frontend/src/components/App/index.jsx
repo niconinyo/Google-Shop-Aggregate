@@ -47,40 +47,42 @@ function App() {
   return (
     <>
       
-  <nav className="bg-slate-400">
-    <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
-      <div className="relative flex items-center justify-between h-16">
+  <nav className="bg-white dark:bg-cyan-900 fixed w-full z-20 top-0 left-0">
+    <div className="max-w-screen-xl flex justify-between items-center mx-auto p-2 h-15">
         <div className="flex-shrink-0">
           <Link to="/">
-            <h2 className="text-white font-bold text-2xl">Aggy</h2>
+            <h2 className="text-white font-bold text-3xl flex ">Aggy</h2>
           </Link>
         </div>
-        <div>
-        <Link to="/offers">
-            <h2 className="text-white font-bold text-2xl">Offers</h2>
-          </Link>
-        </div>
-        <div className="flex-grow">
-          <ul className="flex justify-end text-gray-300 text-lg font-medium">
+        <div className="flex-1 flex justify-center space-x-4">
+          <ul className="flex text-gray-300 text-lg font-medium  ">
+            <li>
+              <Link to="/offers">
+              <h2 className="px-3 py-2 hover:text-white ">Offers</h2>
+              </Link>
+            </li>
             <li>
               <Link to="/search">
                 <h4 className="px-3 py-2 hover:text-white">Search for listings!</h4>
               </Link>
             </li>
+            </ul>
+          </div>
+          <div className="flex justify-end space-x-4">
+          <ul className="flex space-x-4">
             <li>
               <Link to="/auth/signup">
-                <h4 className="px-3 py-2 hover:text-white">Sign Up</h4>
+              <button type="button" className="w-28 text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Sign Up</button>
               </Link>
             </li>
             <li>
               <Link to="/auth/login">
-                <h4 className="px-3 py-2 hover:text-white">Log In</h4>
+                <button type="button" className="w-28 text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Log In</button>
               </Link>
             </li>
           </ul>
         </div>
-      </div>
-    </div>
+        </div>
   </nav>
 
       <Routes>
