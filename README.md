@@ -2,10 +2,10 @@
 Using an API to search through all of google shops aggregate data by specific items. Allowing the user to judge and view all potential offers to find the best price in the quickest way.
 
 # ERD
-![ERD]([https://imgur.com/a/KWIJ09B](https://imgur.com/vxVkdMM))
+![ERD](https://imgur.com/vxVkdMM)
 
 # Screenshots of APP
-![screenshots]([https://imgur.com/a/rtoqjiJ](https://imgur.com/a/rtoqjiJ))
+![screenshots](https://imgur.com/a/rtoqjiJ)
 
 # 
 | URL                      	| HTTP Verb 	| Purpose                                                                       	| CRUD Action 	| Created Yet 	|
