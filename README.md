@@ -4,6 +4,9 @@ Using an API to search through all of google shops aggregate data by specific it
 # ERD
 ![ERD]([https://imgur.com/a/KWIJ09B](https://imgur.com/vxVkdMM))
 
+# Screenshots of APP
+![screenshots] ([https://imgur.com/a/rtoqjiJ](https://imgur.com/a/rtoqjiJ))
+
 # 
 | URL                      	| HTTP Verb 	| Purpose                                                                       	| CRUD Action 	| Created Yet 	|
 |--------------------------	|-----------	|-------------------------------------------------------------------------------	|-------------	|-------------	|
