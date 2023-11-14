@@ -8,7 +8,7 @@ Using an API to search through all of google shops aggregate data by specific it
 ![screenshots](https://imgur.com/a/rtoqjiJ)
 
 # Tech used:
-##React, Vite, Node, Express, MongoDb
+React, Vite, Node, Express, MongoDb
 # 
 | URL                      	| HTTP Verb 	| Purpose                                                                       	| CRUD Action 	| Created Yet 	|
 |--------------------------	|-----------	|-------------------------------------------------------------------------------	|-------------	|-------------	|
