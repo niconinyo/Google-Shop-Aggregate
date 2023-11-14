@@ -26,22 +26,22 @@ export default function SearchPage(props) {
         // console.log(query)
     }
     return (
-            <div className="search-page p-10">
-                <form onSubmit={handleQuerySubmit} className="mt-4 text-center">
-                    <label htmlFor="search" className="block font-medium mb-1">
-                        <h1 className="text-3xl font-bold">Search for an Item!</h1>
+            <div className="search-page p-10 flex flex-col items-center ">
+                <form onSubmit={handleQuerySubmit} className="text-center">
+                    <label htmlFor="search" className="mb-2 text-sm font-medium text-cyan-900 dark:cyan-900">
+                        <h1 className="text-3xl font-bold mb-2 text-cyan-900 dark:text-cyan-900">Search for an Item!</h1>
                     </label>
                     <br />
                     <input
-                        className="p-2 w-[60vw] rounded border border-gray-300 focus:outline-none focus:border-gray-500"
+                        className="block w-100 m-5 p-2 ps-10 text-sm text-sky-100 rounded-lg bg-cyan-900 focus:ring-blue-500 dark:bg-cyan-900  dark:text-sky-100 dark:text-sky-100 dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         name="search"
-                        placeholder="Playstation 5"
+                        placeholder="Enter Search Here:"
                         value={query}
                         onChange={event => setQuery(event.target.value)}
                     />
                     <button
                         type="submit"
-                        className="mx-1 px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-800 bg-gray-700 rounded transition-all duration-200"
+                        className="mb-4 p-1 h-8 px-10 bg-cyan-900 text-md font-bold text-sky-100 dark:sky-100 rounded"
                     >
                         Search
                     </button>

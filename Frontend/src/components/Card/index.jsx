@@ -6,8 +6,8 @@ export default function Card({ listingsData, updateDetails}) {
         <Link
             to={"/details"}
          onClick={() => updateDetails(listingsData)}>
-        <div className="mrounded overflow-hidden shadow-lg ">
-            <div className="bg-white shadow-md rounded-lg max-w-sm bg-sky-100 dark:border-gray-700 ">
+        <div className="rounded overflow-hidden shadow-lg ">
+            <div className="shadow-md rounded-lg max-w-sm bg-sky-100 ">
                 <figure className="px-5 pb-5 ">
                     <img className="rounded-t-lg p-8 py-5 w-full h-80 object-cover" src={listingsData.product_photos[0]}  />
                     <figcaption>

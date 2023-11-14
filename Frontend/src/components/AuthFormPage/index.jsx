@@ -37,16 +37,16 @@ async function handleSubmit(event) {
     formType === 'login' ? actionText = 'Log In' : actionText = 'Sign Up'
     
     return (
-        <div className="flex items-center justify-center h-[90vh]">
-            <div className="bg-gray-800 rounded-lg shadow-xl p-8 w-full max-w-md">
-                <h2 className="text-3xl text-center font-bold text-gray-100 mb-8">{actionText}</h2>
-                <form className="space-y-6" onSubmit={handleSubmit}>
+        <div className="flex items-center justify-center h-[100vh]">
+            <div className="bg-cyan-900 rounded-lg shadow-xl p-10 w-full max-w-md">
+                <h2 className="text-3xl text-center font-bold text-sky-100 mb-8">{actionText}</h2>
+                <form className="space-y-9" onSubmit={handleSubmit}>
                     <div>
-                        <label className="block text-gray-100 font-bold mb-2" htmlFor="email">
+                        <label className="block mb-3 text-sm font-medium text-sky-100 dark:text-sky-100" htmlFor="email">
                             Email
                         </label>
                         <input
-                            className="w-full p-2 text-gray-900 rounded-md focus:outline-none focus:ring focus:border-blue-600"
+                            className="bg-sky-100 text-cyan-900 text-sm rounded-lg focus:ring-blue-500 block w-full p-2.5 dark:bg-sky-100 dark:placeholder-cyan-900 dark:text-cyan-900 dark:focus:ring-blue-500 dark:focus:border-blue-500"
                             id="email"
                             name="email"
                             type="email"
@@ -57,11 +57,11 @@ async function handleSubmit(event) {
                         />
                     </div>
                     <div>
-                        <label className="block text-gray-100 font-bold mb-2" htmlFor="password">
+                        <label className="block mb-3 text-sm font-medium text-sky-100 dark:text-sky-100" htmlFor="password">
                             Password
                         </label>
                         <input
-                            className="w-full p-2 text-gray-900 rounded-md focus:outline-none focus:ring focus:border-blue-600"
+                            className="bg-sky-100 text-cyan-900 text-sm rounded-lg focus:ring-blue-500 block w-full p-2.5 dark:bg-sky-100 dark:placeholder-cyan-900 dark:text-cyan-900 dark:focus:ring-blue-500 dark:focus:border-blue-500"
                             id="password"
                             name="password"
                             type="password"
@@ -75,7 +75,7 @@ async function handleSubmit(event) {
                     <div>
                         <button
                             type="submit"
-                            className="w-full py-2 px-4 bg-green-700 text-gray-100 rounded-md hover:bg-green-800 transition duration-300">
+                            className="text-sky-100 hover:bg-sky-100 hover:text-cyan-900 font-bold py-1 px-2 bg-cyan-900 rounded cursor-pointer mr-2">
                             {actionText}
                         </button>
                     </div>
